@@ -1,0 +1,36 @@
+ChartValues:
+  persistence:
+    persistentVolumeClaim:
+      registry:
+        storageClass: alicloud-disk-topology-alltype
+        size: 40Gi
+      database:
+        storageClass: alicloud-disk-topology-alltype
+        size: 40Gi
+      jobservice:
+        jobLog:
+          storageClass: alicloud-disk-topology-alltype
+          size: 40Gi
+      trivy:
+        storageClass: alicloud-disk-topology-alltype
+        size: 40Gi
+      redis:
+        storageClass: alicloud-disk-topology-alltype
+        size: 40Gi
+    enabled: true
+  harborAdminPassword: root@12345
+  expose:
+    tls:
+      enabled: false
+    type: loadBalancer
+HelmChartPath: .
+RuntimeType: Kubernetes
+ServiceType: private
+ArtifactSourceType: HelmChart
+ServiceBuildRegion: ap-southeast-1
+RepoName: yehanyh/harbor-helm
+RegionId: cn-hangzhou
+OutputType: HelmNotes
+Owner: yehanyh
+Branch: main
+Platform: github
